@@ -16,12 +16,14 @@ import NoteList from './components/NoteList/NoteList';
 import NoteDetailsPage from './components/NoteDetail/NoteDetailsPage';
 import EditNote from './components/EditNote/EditNote';
 import NotFound from './components/NotFound/NotFound';
+import { getCurrentUser } from 'aws-amplify/auth';
+import { useEffect, useState } from 'react';
 
 Amplify.configure(awsconfig);
 
 function App() {
   return (
-    <Authenticator variation='modal' socialProviders={['google']}>
+    <Authenticator variation='modal'>
       {({ signOut, user }) => (
         <Router>
           <div className='App'>

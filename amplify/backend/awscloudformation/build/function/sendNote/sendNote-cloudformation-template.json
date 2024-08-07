@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"12.10.1\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"12.12.4\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
     "CloudWatchRule": {
       "Type": "String",
@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "sendNote",
+            "SendNote",
             {
               "Fn::Join": [
                 "",
                 [
-                  "sendNote",
+                  "SendNote",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "assignment1LambdaRole3d83f2d8",
+            "note9LambdaRole0607f023",
             {
               "Fn::Join": [
                 "",
                 [
-                  "assignment1LambdaRole3d83f2d8",
+                  "note9LambdaRole0607f023",
                   "-",
                   {
                     "Ref": "env"

@@ -35,9 +35,9 @@ const NoteDetailsPage = () => {
           {note.noteImage && (
             <CardMedia
               component='img'
-              image={`https://notes200134-dev.s3.amazonaws.com/public/${note.noteImage}`}
+              image={`https://note9imagesa61da-dev.s3.amazonaws.com/public/${note.noteImage}`}
               alt='Note Image'
-              sx={{ margin: 'auto', maxWidth: 300, maxHeight: 300 }} // Center the image and set max dimensions
+              sx={{ margin: 'auto', maxWidth: 600, maxHeight: 600 }} // Center the image and set max dimensions
             />
           )}
           <CardContent>

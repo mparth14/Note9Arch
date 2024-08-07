@@ -1,58 +1,29 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-assignment1-dev-200134-authRole",
-      "UnauthRoleArn": "arn:aws:iam::670166870288:role/amplify-assignment1-dev-200134-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::670166870288:role/amplify-assignment1-dev-200134-authRole",
+      "AuthRoleName": "amplify-note9-dev-a61da-authRole",
+      "UnauthRoleArn": "arn:aws:iam::670166870288:role/amplify-note9-dev-a61da-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::670166870288:role/amplify-note9-dev-a61da-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-assignment1-dev-200134-deployment",
-      "UnauthRoleName": "amplify-assignment1-dev-200134-unauthRole",
-      "StackName": "amplify-assignment1-dev-200134",
-      "StackId": "arn:aws:cloudformation:us-east-1:670166870288:stack/amplify-assignment1-dev-200134/3b374ab0-c15e-11ee-a195-12390a332661",
-      "AmplifyAppId": "d1pvj51txitbz0"
+      "DeploymentBucketName": "amplify-note9-dev-a61da-deployment",
+      "UnauthRoleName": "amplify-note9-dev-a61da-unauthRole",
+      "StackName": "amplify-note9-dev-a61da",
+      "StackId": "arn:aws:cloudformation:us-east-1:670166870288:stack/amplify-note9-dev-a61da/d0f1a9e0-3d3e-11ef-8b14-0ebac815dd1f",
+      "AmplifyAppId": "d3q8lybb8kz8mv"
     },
     "categories": {
       "auth": {
-        "assignment1e1a34078": {}
-      },
-      "function": {
-        "addnote": {
-          "deploymentBucketName": "amplify-assignment1-dev-200134-deployment",
-          "s3Key": "amplify-builds/addnote-4d582b41794b56596273-build.zip"
-        },
-        "notesShare": {
-          "deploymentBucketName": "amplify-assignment1-dev-200134-deployment",
-          "s3Key": "amplify-builds/notesShare-652f704b472b49735732-build.zip"
-        },
-        "sendNote": {
-          "deploymentBucketName": "amplify-assignment1-dev-200134-deployment",
-          "s3Key": "amplify-builds/sendNote-4569654e4b6d79695a79-build.zip"
-        }
+        "note9ddb516b7": {}
       },
       "storage": {
-        "notes": {},
-        "notesUserInfo": {},
-        "notesapp": {}
+        "note9images": {},
+        "note9": {}
       },
       "api": {
-        "addNote": {},
-        "notes": {},
-        "notesLAMBDA": {}
+        "note9": {}
       },
-      "analytics": {
-        "sharenote": {},
-        "Pinpoint": {
-          "Name": "sharenote-dev",
-          "Id": "0ee34f13585c4af68e35f573b7f0b6eb",
-          "Region": "us-east-1"
-        }
-      },
-      "notifications": {
-        "Pinpoint": {
-          "Name": "sharenote-dev",
-          "Id": "0ee34f13585c4af68e35f573b7f0b6eb",
-          "Region": "us-east-1"
-        }
+      "function": {
+        "SendNote": {}
       }
     }
   }

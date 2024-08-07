@@ -1,6 +1,6 @@
 import './NavBar.css';
 import Button from '@mui/material/Button';
-import logo from '../../assets/logo.png';
+import logo from '../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 import { Typography } from '@mui/material';
 

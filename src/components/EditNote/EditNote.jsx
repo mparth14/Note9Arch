@@ -86,6 +86,7 @@ function EditNote() {
         variables: {
           input: updatedNoteDetails,
         },
+        authMode: "userPool",
       });
       navigate('/');
     } catch (error) {

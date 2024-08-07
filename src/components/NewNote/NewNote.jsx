@@ -102,6 +102,7 @@ function NewNote() {
         variables: {
           input: noteDetails,
         },
+        authMode: "userPool",
       });
 
       const result = newNote.data;

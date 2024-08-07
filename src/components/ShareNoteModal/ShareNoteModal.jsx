@@ -6,16 +6,12 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { post } from 'aws-amplify/api';
 import { getCurrentUser } from 'aws-amplify/auth';
-import PropTypes from 'prop-types';
 
 const ShareNoteModal = ({
   open,
   onClose,
-  onShare,
   note,
-  snackbarOpen,
   setSnackbarOpen,
-  snackbarMessage,
   setSnackbarMessage,
 }) => {
   const [email, setEmail] = useState('');
@@ -58,18 +54,24 @@ const ShareNoteModal = ({
       emailID: email,
       noteData: note,
     };
+    const jsonData = JSON.stringify(data);
     try {
-      const response = await post({
-        mode: 'no-cors',
-        apiName: 'notesLAMBDA',
-        path: '/sendmynote',
-        options: {
-          body: data,
-        },
-      });
-      setEmail('');
-      setSnackbarMessage('Note successfully shared!');
-      setSnackbarOpen(true);
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://a6uem5twy8.execute-api.us-east-1.amazonaws.com/test/');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          setEmail('');
+          setSnackbarMessage('Note successfully shared!');
+          setSnackbarOpen(true);
+        } else {
+          console.error('Request failed. Status:', xhr.status);
+        }
+      };
+      xhr.onerror = function () {
+        console.error('Error sending request.');
+      };
+      xhr.send(jsonData);
     } catch (error) {
       console.error('Error sending email:', error);
     } finally {

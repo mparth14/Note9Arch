@@ -1,5 +1,7 @@
 {
   "dev": {
-    "configLevel": "amplifyAdmin"
+    "configLevel": "project",
+    "useProfile": false,
+    "awsConfigFilePath": "C:\\Users\\pmodi\\.amplify\\awscloudformation\\CS4pYTfWd8"
   }
 }

@@ -1,75 +1,41 @@
 {
-  "analytics": {
-    "sharenote": {
-      "providerPlugin": "awscloudformation",
-      "service": "Pinpoint"
-    }
-  },
   "api": {
-    "addNote": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "addnote"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
-    },
-    "notes": {
+    "note9": {
       "dependsOn": [
         {
           "attributes": [
             "UserPoolId"
           ],
           "category": "auth",
-          "resourceName": "assignment1e1a34078"
+          "resourceName": "note9ddb516b7"
         }
       ],
       "output": {
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
-              "apiKeyConfig": {
-                "apiKeyExpirationDate": "2025-02-02T17:43:49.153Z",
-                "apiKeyExpirationDays": 365,
-                "description": "notes graphql  api description feb 3"
-              },
-              "authenticationType": "API_KEY"
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authnote9ddb516b7"
+              }
             }
           ],
           "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authassignment1e1a34078"
-            }
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2024-07-18T15:54:31.122Z",
+              "apiKeyExpirationDays": 10,
+              "description": ""
+            },
+            "authenticationType": "API_KEY"
           }
         }
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
-    },
-    "notesLAMBDA": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "sendNote"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
     }
   },
   "auth": {
-    "assignment1e1a34078": {
+    "note9ddb516b7": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -82,11 +48,10 @@
           "passwordPolicyMinLength": 8
         },
         "signupAttributes": [
-          "EMAIL"
+          "EMAIL",
+          "NAME"
         ],
-        "socialProviders": [
-          "GOOGLE"
-        ],
+        "socialProviders": [],
         "usernameAttributes": [
           "EMAIL"
         ],
@@ -98,142 +63,15 @@
       "service": "Cognito"
     }
   },
-  "function": {
-    "addnote": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "notesShare": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "sendNote": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "notifications": {
-    "sharenote": {
-      "channels": [
-        "Email"
-      ],
-      "service": "Pinpoint"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_analytics_Pinpoint_Id": {
-      "usedBy": [
-        {
-          "category": "analytics",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
-    "AMPLIFY_analytics_Pinpoint_Name": {
-      "usedBy": [
-        {
-          "category": "analytics",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
-    "AMPLIFY_analytics_Pinpoint_Region": {
-      "usedBy": [
-        {
-          "category": "analytics",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
-    "AMPLIFY_function_addnote_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "addnote"
-        }
-      ]
-    },
-    "AMPLIFY_function_addnote_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "addnote"
-        }
-      ]
-    },
-    "AMPLIFY_function_notesShare_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "notesShare"
-        }
-      ]
-    },
-    "AMPLIFY_function_notesShare_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "notesShare"
-        }
-      ]
-    },
-    "AMPLIFY_function_sendNote_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "sendNote"
-        }
-      ]
-    },
-    "AMPLIFY_function_sendNote_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "sendNote"
-        }
-      ]
-    },
-    "AMPLIFY_notifications_Pinpoint_Id": {
-      "usedBy": [
-        {
-          "category": "notifications",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
-    "AMPLIFY_notifications_Pinpoint_Name": {
-      "usedBy": [
-        {
-          "category": "notifications",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    },
-    "AMPLIFY_notifications_Pinpoint_Region": {
-      "usedBy": [
-        {
-          "category": "notifications",
-          "resourceName": "Pinpoint"
-        }
-      ]
-    }
-  },
   "storage": {
-    "notes": {
+    "note9": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "note9images": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "S3"
-    },
-    "notesUserInfo": {
-      "providerPlugin": "awscloudformation",
-      "service": "DynamoDB"
-    },
-    "notesapp": {
-      "providerPlugin": "awscloudformation",
-      "service": "DynamoDB"
     }
   }
 }

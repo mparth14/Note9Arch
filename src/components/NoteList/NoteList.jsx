@@ -61,6 +61,7 @@ export default function NoteList() {
     try {
       const noteList = await client.graphql({
         query: queries.listNotes,
+        authMode: "userPool",
       });
 
       const result = noteList.data;
@@ -94,6 +95,7 @@ export default function NoteList() {
       await client.graphql({
         query: mutations.deleteNote,
         variables: { input: { id: noteToDelete } },
+        authMode: "userPool"
       });
 
       setSnackbarMessage('Note successfully deleted!');
@@ -237,7 +239,7 @@ export default function NoteList() {
                             <ListItemAvatar>
                               <Avatar
                                 alt='Note Avatar'
-                                src={`https://notes200134-dev.s3.amazonaws.com/public/${note.noteImage}`}
+                                src={`https://note9imagesa61da-dev.s3.amazonaws.com/public/${note.noteImage}`}
                               />
                             </ListItemAvatar>
 
