@@ -15,6 +15,8 @@ COPY . .
 
 # Expose the port the app runs on
 EXPOSE 5173
+EXPOSE 4173
 
 # Define the command to run the app with --host option
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["npm", "run", "build"]
+CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
