@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as the base image
-FROM node:16-alpine AS builder
+FROM node:18
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -13,16 +13,8 @@ RUN npm install --legacy-peer-deps
 # Copy the remaining application code to the working directory
 COPY . .
 
-RUN npm run build
-
-FROM node:16-alpine
-
-
-WORKDIR /app
-
-COPY --from=builder /app .
-
-EXPOSE 4173
+# Expose the port the app runs on
+EXPOSE 5173
 
 # Define the command to run the app with --host option
-CMD ["npm", "run", "preview"]
+CMD ["npm", "run", "dev", "--", "--host"]
